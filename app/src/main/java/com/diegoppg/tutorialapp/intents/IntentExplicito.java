@@ -1,9 +1,10 @@
-package com.diegoppg.tutorialapp;
+package com.diegoppg.tutorialapp.intents;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,15 +12,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.diegoppg.tutorialapp.intents.IntentExplicito;
+import com.diegoppg.tutorialapp.R;
 
-public class MainActivity extends AppCompatActivity {
+public class IntentExplicito extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_intent_explicito);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -27,26 +28,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //Obtener boton de la vista
-        Button btnIntent = findViewById(R.id.buttonIntent);
+        Button btnComprar = findViewById(R.id.buttonComprar);
+        EditText editTextComprar = findViewById(R.id.editTextComida);
+        EditText editTextBebida = findViewById(R.id.editTextBebida);
 
-
-        //Add listener
-        btnIntent.setOnClickListener(new View.OnClickListener() {
+        btnComprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Crear intent explicito
-                Intent intentExplicito = new Intent(MainActivity.this,
-                        IntentExplicito.class);
+                Intent i = new Intent(IntentExplicito.this, IntentImplicito.class);
+                //Add parameters
+                i.putExtra("Prueba", "Hamburguesa");
+                i.putExtra("Comida", editTextComprar.getText().toString());
+                i.putExtra("Bebida", editTextBebida.getText().toString());
 
-                //Iniciar actividad
-                startActivity(intentExplicito);
-
-
-
+                startActivity(i);
             }
         });
-
 
 
 
