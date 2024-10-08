@@ -1,7 +1,16 @@
 package com.diegoppg.tutorialapp.intents;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.AlarmClock;
+import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -39,8 +48,45 @@ public class IntentImplicito extends AppCompatActivity {
         textViewBebida.setText(bebida);
         Log.d("PRUEBA", textoPrueba);
 
+        //Intent implicito Navegador
+        ImageButton imageButton = findViewById(R.id.imageButton);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
 
+                String url = "https://www.flaticon.es/";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+
+
+
+
+
+
+
+
+                /*Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
+                        .putExtra(AlarmClock.EXTRA_MESSAGE, "message")
+                        .putExtra(AlarmClock.EXTRA_HOUR, 2)
+                        .putExtra(AlarmClock.EXTRA_MINUTES, 40);
+                startActivity(intent);*/
+
+/*
+                Intent intent = getIntent();
+
+                intent.putExtra("Prueba", "De vuelta");
+                setResult(Activity.RESULT_OK,intent); //Indicamos con RESULT_OK que todo ha salido correctamente
+                finish(); //acabamos la actividad y volvemos a MainActivity
+
+*/
+
+
+
+
+            }
+        });
 
 
 

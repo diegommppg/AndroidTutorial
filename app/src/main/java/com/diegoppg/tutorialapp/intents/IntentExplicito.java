@@ -1,12 +1,18 @@
 package com.diegoppg.tutorialapp.intents;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -28,6 +34,35 @@ public class IntentExplicito extends AppCompatActivity {
         });
 
 
+        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK) {
+                        Intent data = result.getData();
+                        String texto = data.getStringExtra("Prueba");
+                        Log.d("PRUEBA", texto);
+                    }
+                }
+        );
+
+        /*
+        ActivityResultLauncher<Intent> launcherDatosUsuario = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+
+                        if(result.getResultCode() == Activity.RESULT_OK)  {
+                            Bundle extras = result.getData().getExtras();
+                            //actualPass = extras.getString("newPass");
+                            //actualUser = extras.getString("newUser");
+                        }
+                    }
+                });
+*/
+        //launcherDatosUsuario.launch(intent);
+
         Button btnComprar = findViewById(R.id.buttonComprar);
         EditText editTextComprar = findViewById(R.id.editTextComida);
         EditText editTextBebida = findViewById(R.id.editTextBebida);
@@ -41,10 +76,11 @@ public class IntentExplicito extends AppCompatActivity {
                 i.putExtra("Comida", editTextComprar.getText().toString());
                 i.putExtra("Bebida", editTextBebida.getText().toString());
 
-                startActivity(i);
+                //startActivity(i);
+
+                activityResultLauncher.launch(i);
             }
         });
-
 
 
     }
