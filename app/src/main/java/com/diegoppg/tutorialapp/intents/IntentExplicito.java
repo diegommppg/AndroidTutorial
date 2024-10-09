@@ -78,6 +78,7 @@ public class IntentExplicito extends AppCompatActivity {
 
                 //startActivity(i);
 
+
                 activityResultLauncher.launch(i);
             }
         });

@@ -61,7 +61,7 @@ public class IntentImplicito extends AppCompatActivity {
                 startActivity(intent);
 */
              
-
+/*
                 //Intent crear alarma
 
                 Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
@@ -69,14 +69,14 @@ public class IntentImplicito extends AppCompatActivity {
                         .putExtra(AlarmClock.EXTRA_HOUR, 7)
                         .putExtra(AlarmClock.EXTRA_MINUTES, 10);
                 startActivity(intent);
-
+*/
 
 
 
 
                 Intent intent2 = getIntent();
 
-                intent.putExtra("Prueba", "De vuelta");
+                intent2.putExtra("Prueba", "De vuelta");
                 setResult(Activity.RESULT_OK,intent2); //Indicamos con RESULT_OK que todo ha salido correctamente
                 finish(); //acabamos la actividad y volvemos a MainActivity
 
