@@ -55,32 +55,31 @@ public class IntentImplicito extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-                String url = "https://www.flaticon.es/";
+                //Intent abrir navegador
+  /*              String url = "https://www.flaticon.es/";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+*/
+             
+
+                //Intent crear alarma
+
+                Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
+                        .putExtra(AlarmClock.EXTRA_MESSAGE, "Alarma clase")
+                        .putExtra(AlarmClock.EXTRA_HOUR, 7)
+                        .putExtra(AlarmClock.EXTRA_MINUTES, 10);
                 startActivity(intent);
 
 
 
 
 
-
-
-
-                /*Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
-                        .putExtra(AlarmClock.EXTRA_MESSAGE, "message")
-                        .putExtra(AlarmClock.EXTRA_HOUR, 2)
-                        .putExtra(AlarmClock.EXTRA_MINUTES, 40);
-                startActivity(intent);*/
-
-/*
-                Intent intent = getIntent();
+                Intent intent2 = getIntent();
 
                 intent.putExtra("Prueba", "De vuelta");
-                setResult(Activity.RESULT_OK,intent); //Indicamos con RESULT_OK que todo ha salido correctamente
+                setResult(Activity.RESULT_OK,intent2); //Indicamos con RESULT_OK que todo ha salido correctamente
                 finish(); //acabamos la actividad y volvemos a MainActivity
 
-*/
 
 
 

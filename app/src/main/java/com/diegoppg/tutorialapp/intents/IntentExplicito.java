@@ -45,7 +45,7 @@ public class IntentExplicito extends AppCompatActivity {
                 }
         );
 
-        /*
+
         ActivityResultLauncher<Intent> launcherDatosUsuario = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -60,7 +60,7 @@ public class IntentExplicito extends AppCompatActivity {
                         }
                     }
                 });
-*/
+
         //launcherDatosUsuario.launch(intent);
 
         Button btnComprar = findViewById(R.id.buttonComprar);
