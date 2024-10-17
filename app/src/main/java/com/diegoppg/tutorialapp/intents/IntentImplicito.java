@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -79,7 +80,6 @@ public class IntentImplicito extends AppCompatActivity {
                 intent2.putExtra("Prueba", "De vuelta");
                 setResult(Activity.RESULT_OK,intent2); //Indicamos con RESULT_OK que todo ha salido correctamente
                 finish(); //acabamos la actividad y volvemos a MainActivity
-
 
 
 

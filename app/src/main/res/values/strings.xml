@@ -46,4 +46,9 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="label_bebida">BEBIDA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buttonsettings">Ir a casa</string>
+    <string name="buttonhome">Ir a perfil</string>
+    <string name="buttonprofile">Ir a ajustes</string>
 </resources>
