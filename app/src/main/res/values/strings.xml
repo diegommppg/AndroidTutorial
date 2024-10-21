@@ -51,4 +51,7 @@
     <string name="buttonsettings">Ir a casa</string>
     <string name="buttonhome">Ir a perfil</string>
     <string name="buttonprofile">Ir a ajustes</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
 </resources>
