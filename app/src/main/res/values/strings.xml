@@ -54,4 +54,14 @@
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="settings">Settings</string>
+
+
+    <string-array name="paises">
+        <item>Francia</item>
+        <item>Italia</item>
+        <item>Portugal</item>
+        <item>Belgica</item>
+        <item>Grecia</item>
+        <item>Islandia</item>
+    </string-array>
 </resources>

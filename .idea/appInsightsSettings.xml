@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.diegoppg.tutorialapp" />
+                  <option name="mobileSdkAppId" value="1:541868104304:android:247bb897713f3330be32b5" />
+                  <option name="projectId" value="tutorialapp-ec37c" />
+                  <option name="projectNumber" value="541868104304" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
