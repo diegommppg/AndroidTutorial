@@ -64,4 +64,16 @@
         <item>Grecia</item>
         <item>Islandia</item>
     </string-array>
+
+    <string-array name="pokedex">
+        <item>Bulbasur</item>
+        <item>Charmander</item>
+        <item>Tortoise</item>
+        <item>Milktank</item>
+        <item>Snorlax</item>
+        <item>Pikachu</item>
+        <item>Arbok</item>
+        <item>Muk</item>
+    </string-array>
+
 </resources>
