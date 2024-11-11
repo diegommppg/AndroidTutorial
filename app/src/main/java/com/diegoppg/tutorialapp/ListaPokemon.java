@@ -13,6 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.diegoppg.tutorialapp.controladores.FirebasePerro;
+import com.diegoppg.tutorialapp.modelo.Perro;
+
 public class ListaPokemon extends AppCompatActivity {
 
     @Override
@@ -45,5 +48,14 @@ public class ListaPokemon extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),value,Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        //Añadir un nuevo perro
+        Perro perrito = new Perro("Perrito", "Pitbull", 5, true);
+        FirebasePerro.addPerro(perrito);
+
+        FirebasePerro.listarPerros();
+
+
     }
 }
