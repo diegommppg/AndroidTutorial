@@ -14,6 +14,10 @@ public class Perro {
         this.isPeligroso = isPeligroso;
     }
 
+    public Perro(){
+
+    }
+
     public String getNombre() {
         return nombre;
     }
