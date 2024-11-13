@@ -16,7 +16,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 public class FirebasePerro {
 
@@ -49,13 +51,13 @@ public class FirebasePerro {
                 });
     }
 
-    public static ArrayList<Perro> listarPerros(){
+    public static CompletableFuture<List<Perro>> listarPerros(){
         String TAG = "FirebasePerro";
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        //Create ArrayList de perros
-        ArrayList<Perro> perros = new ArrayList<>();
+        //Create CompletableFuture de perros
+        CompletableFuture<List<Perro>> futurePerros = new CompletableFuture<>();
 
         db.collection("perros")
                 .get()
@@ -63,6 +65,7 @@ public class FirebasePerro {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+                            List<Perro> perros = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
 
@@ -72,13 +75,16 @@ public class FirebasePerro {
                                 //Añadir al ArrayList
                                 perros.add(newPerro);
                             }
+
+                            futurePerros.complete(perros);
                         } else {
                             Log.w(TAG, "Error getting documents.", task.getException());
+                            futurePerros.completeExceptionally(new Exception("Error listPerros", task.getException()));
                         }
                     }
                 });
 
-        return perros;
+        return futurePerros;
     }
 
 

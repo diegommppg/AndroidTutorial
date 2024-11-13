@@ -34,13 +34,26 @@ public class ListadoPerros extends AppCompatActivity {
         });
 
 
-        //Recuparar elementos de strings.xml
+        //Añadimos dos perros
+     /*   Perro p = new Perro("Copito","Dalmata", 1, true);
+        FirebasePerro.addPerro(p);
+        Perro p2 = new Perro("Bigotes","Boxer", 6, false);
+        FirebasePerro.addPerro(p2);
+*/
 
-        ArrayList<Perro> perros = FirebasePerro.listarPerros();
+        //Listamos los perros
+    /*    ArrayList<Perro> perros = FirebasePerro.listarPerros();
+
+        Log.d("ListadoPerros", perros.size() + "");
 
         for (Perro perro : perros) {
             Log.d("ListadoPerros", perro.toString());
         }
+*/
+
+
+
+
 
         String [] arrayPerro = getResources().getStringArray(R.array.pokedex);
 
