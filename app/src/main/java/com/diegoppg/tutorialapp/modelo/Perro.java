@@ -50,5 +50,8 @@ public class Perro {
         isPeligroso = peligroso;
     }
 
-
+    @Override
+    public String toString() {
+        return nombre;
+    }
 }
