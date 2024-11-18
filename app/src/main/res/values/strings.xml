@@ -54,6 +54,7 @@
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="settings">Settings</string>
+    <string name="tituloComida">Listado comida</string>
 
 
     <string-array name="paises">

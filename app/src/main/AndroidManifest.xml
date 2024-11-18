@@ -16,6 +16,9 @@
         android:theme="@style/Theme.TutorialApp"
         tools:targetApi="31">
         <activity
+            android:name=".ListadoComida"
+            android:exported="false" />
+        <activity
             android:name=".ListaPokemon"
             android:exported="false" />
         <activity
