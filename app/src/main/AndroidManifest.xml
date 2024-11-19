@@ -16,7 +16,7 @@
         android:theme="@style/Theme.TutorialApp"
         tools:targetApi="31">
         <activity
-            android:name=".ListadoComida"
+            android:name=".listados.ListadoPerros"
             android:exported="false" />
         <activity
             android:name=".ListaPokemon"
@@ -25,7 +25,7 @@
             android:name=".ActivityList"
             android:exported="false" />
         <activity
-            android:name=".listados.ListadoPerros"
+            android:name=".ListadoComida"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
