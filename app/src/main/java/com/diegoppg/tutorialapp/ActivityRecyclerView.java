@@ -1,5 +1,7 @@
 package com.diegoppg.tutorialapp;
 
+import static com.diegoppg.tutorialapp.controladores.FirebasePato.*;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -35,11 +37,15 @@ public class ActivityRecyclerView extends AppCompatActivity {
 
         FloatingActionButton button = findViewById(R.id.floatingActionButtonPato);
         button.setOnClickListener(v -> {
-            FirebasePato.addPato(new Pato("Daisy", 5));
+
+            NuevoPatoFragment nuevoPatoFragment = new NuevoPatoFragment();
+            nuevoPatoFragment.show(getSupportFragmentManager(), "nuevoPato");
+
+
         });
 
 
-        FirebasePato.listarPatos().thenAccept(patos -> {
+        listarPatos().thenAccept(patos -> {
             if (patos != null) {
                 //Creamos adaptador personalizadp
                 //String[] patos = {"Donald", "Lucas", "Daisy", "Hank", "Hugo"};

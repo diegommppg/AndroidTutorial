@@ -47,12 +47,6 @@ public class ListaPokemon extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
                 String value=adapter.getItem(position);
                 Toast.makeText(getApplicationContext(),value,Toast.LENGTH_SHORT).show();
             }
